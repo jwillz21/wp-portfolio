@@ -1,0 +1,6 @@
+db_backups/
+uploads_backups/
+scripts/git-hooks/
+wp-content/themes/twentytwenty*
+
+.DS_Store/
