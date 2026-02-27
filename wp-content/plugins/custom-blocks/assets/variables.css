@@ -1,0 +1,34 @@
+
+
+/******************************************************************
+ * Global Variables. Set the tone for the entire project here.
+ *****************************************************************/
+
+:root {
+    /**********************
+    * Colors
+    **********************/
+    --primary: #245cf5;
+    --secondary: #fff;
+    --bg-light: linear-gradient(135deg, #101828 0%, #1E2939 50%,  #101828 100%);
+    --bg-dark: #030712;
+
+
+    /* Font Colours */
+    --font-default-color: #99A1AF;
+    --font-highlight-color: #59a3f8;
+    --font-title-color: #fff;
+    --font-subtitle-primary-color: #D1D5DC;
+
+    /**********************
+    * Typography
+    **********************/
+    --font-family: 'Inter', sans-serif;
+    --font-size-base: 16px;
+    --font-size-h1: 72px;
+    --font-size-h2: 48px;
+    --font-size-h3: 24px;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+}

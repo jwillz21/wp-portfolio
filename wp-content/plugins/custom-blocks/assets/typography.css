@@ -1,0 +1,40 @@
+/**********************
+* Global Typography
+**********************/
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--font-default-color);
+}
+
+h1, .h1 {
+    font-size: var(--font-size-h1);
+    color: var(--font-title-color);
+    margin-bottom: 24px;
+}
+
+h2, .h2 {
+    font-size: var(--font-size-h2);
+    color: var(--font-subtitle-primary-color);
+}
+
+h3, .h3 {
+    font-size: var(--font-size-h3);
+    color: var(--font-subtitle-primary-color);
+    margin-bottom: 32px;
+}
+
+p {
+    margin-bottom: 1em;
+    color: var(--font-default-color);
+}
+
+a {
+    color: var(--font-highlight-color);
+    text-decoration: underline;
+}
+
+.highlight {
+    color: var(--font-highlight-color);
+}
