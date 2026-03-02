@@ -1,8 +1,3 @@
-const { registerBlockType } = wp.blocks;
-const { RichText, MediaUpload, InspectorControls } = wp.blockEditor;
-const { Button, TextControl, PanelBody } = wp.components;
-const { createElement } = wp.element;
-
 registerBlockType('custom-blocks/profile-hero', {
     title: 'Profile Hero',
     icon: 'cover-image',

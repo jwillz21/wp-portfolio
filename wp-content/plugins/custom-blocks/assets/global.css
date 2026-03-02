@@ -1,0 +1,43 @@
+
+
+section:not(.profile-hero) {
+    padding-top: var(--spaceing-section);
+    padding-bottom: var(--spaceing-section);
+}
+
+.bg-dark {
+    background-color: var(--bg-dark) !important;
+}
+
+.bg-light {
+    background: var(--bg-light);
+}
+
+.card {
+    height: 100%;
+    background-color: var(--card-bg);
+    padding: 24px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+}
+
+/* .card.card-light {
+    background: var(--bg-light);
+    padding: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+} */
+
+.card-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: var(--primary);
+    padding: 16px;
+    border-radius: 45px;
+}
+
+.card-icon img {
+    width: 32px;
+    height: 32px;
+}

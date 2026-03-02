@@ -2,5 +2,7 @@ db_backups/
 uploads_backups/
 scripts/git-hooks/
 wp-content/themes/twentytwenty*
+wp-content/themes/understrap-child/node_modules
+wp-content/uploads/
 
 .DS_Store/

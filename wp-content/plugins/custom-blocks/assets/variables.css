@@ -10,9 +10,12 @@
     **********************/
     --primary: #245cf5;
     --secondary: #fff;
-    --bg-light: linear-gradient(135deg, #101828 0%, #1E2939 50%,  #101828 100%);
-    --bg-dark: #030712;
 
+    /* Utility Colors */
+    --card-border: #1E2939;
+    --card-bg: #0f1929;
+    --bg-light: linear-gradient(135deg, #101828 0%, #1E2939 50%,  #101828 100%);
+    --bg-dark: #040613;
 
     /* Font Colours */
     --font-default-color: #99A1AF;
@@ -24,11 +27,16 @@
     * Typography
     **********************/
     --font-family: 'Inter', sans-serif;
-    --font-size-base: 16px;
+    --font-size-base: 18px;
     --font-size-h1: 72px;
     --font-size-h2: 48px;
     --font-size-h3: 24px;
     --font-weight-normal: 400;
     --font-weight-bold: 700;
+    --font-base-line-height: 28px;
 
+    /**********************
+    * Spacing
+    **********************/
+    --spaceing-section: 6rem;
 }
