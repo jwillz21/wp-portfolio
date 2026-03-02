@@ -16,16 +16,18 @@ section:not(.profile-hero) {
 .card {
     height: 100%;
     background-color: var(--card-bg);
-    padding: 24px;
     border: 1px solid var(--card-border);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
 }
 
-/* .card.card-light {
-    background: var(--bg-light);
+.card-body {
     padding: 24px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
-} */
+} 
+
+.card-dark {
+    background-color: var(--card-bg-dark);
+    border: 1px solid var(--card-border-dark);
+}
 
 .card-icon-wrapper {
     display: inline-flex;
@@ -40,4 +42,22 @@ section:not(.profile-hero) {
 .card-icon img {
     width: 32px;
     height: 32px;
+}
+
+.pill {
+    display: inline-flex;
+    font-size: var(--font-size-pill);
+    padding: 8px 16px;
+    border-radius: 45px;
+    background-color: var(--pill-bg);
+    white-space: nowrap;
+    border: 1px solid var(--pill-font-color);
+    color: var(--pill-font-color);
+    font-weight: var(--font-weight-normal);
+}
+
+.pill:hover {
+    background-color: var(--pill-bg-hover);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    cursor: default;
 }

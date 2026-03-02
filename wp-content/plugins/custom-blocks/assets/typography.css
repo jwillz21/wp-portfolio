@@ -34,7 +34,7 @@ h2, .h2 {
 
 h3, .h3 {
     font-size: var(--font-size-h3);
-    color: var(--font-subtitle-primary-color);
+    color: var(--white);
     margin-bottom: 32px;
 }
 

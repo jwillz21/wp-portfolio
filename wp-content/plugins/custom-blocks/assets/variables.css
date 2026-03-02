@@ -10,18 +10,24 @@
     **********************/
     --primary: #245cf5;
     --secondary: #fff;
+    --white: #fff;
 
     /* Utility Colors */
     --card-border: #1E2939;
+    --card-border-dark: #1E2939;
     --card-bg: #0f1929;
+    --card-bg-dark: #040613;
     --bg-light: linear-gradient(135deg, #101828 0%, #1E2939 50%,  #101828 100%);
     --bg-dark: #040613;
+    --pill-bg: #091842;
 
     /* Font Colours */
     --font-default-color: #99A1AF;
     --font-highlight-color: #59a3f8;
     --font-title-color: #fff;
     --font-subtitle-primary-color: #D1D5DC;
+    --pill-font-color: #52a2ff;
+    --pill-bg-hover: #0c2159;
 
     /**********************
     * Typography
@@ -34,6 +40,11 @@
     --font-weight-normal: 400;
     --font-weight-bold: 700;
     --font-base-line-height: 28px;
+
+    /* Utility Typography */
+
+    --font-size-pill: 16px;
+
 
     /**********************
     * Spacing

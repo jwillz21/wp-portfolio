@@ -124,11 +124,13 @@ registerBlockType('custom-blocks/profile-about', {
                     interests.map((interest, index) =>
                         createElement('div', { key: index, className: 'col-md-4 mb-4 d-flex' },
                             createElement('div', { className: 'interest-item text-center card' },
-                                createElement('div', { className: 'card-icon-wrapper mb-4' },
+                                createElement('div', { className: 'card-body' },
+                                    createElement('div', { className: 'card-icon-wrapper mb-4' },
                                     interest.icon && createElement('img', { src: interest.icon, alt: interest.title || '', className: 'card-icon' }),
                                 ),
                                 createElement('h3', null, interest.title || ''),
                                 createElement('p', null, interest.content || '')
+                                )
                             )
                         )
                     )
