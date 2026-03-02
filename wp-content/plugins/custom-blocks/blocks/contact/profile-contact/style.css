@@ -1,0 +1,33 @@
+.contact-link {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+}
+
+.contact-link:hover {
+    color: var(--white);
+}
+
+.contact-link span {
+    font-size: 14px;
+    color: var(--font-subtitle-primary-color);
+    text-transform: capitalize;
+}
+
+.social-link {
+    padding: 16px;
+    display: inline-flex;
+    border-radius: 50%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+    background: rgba(255, 255, 255, 0.00);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    transition: transform 0.15s ease;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    object-fit: contain;
+}

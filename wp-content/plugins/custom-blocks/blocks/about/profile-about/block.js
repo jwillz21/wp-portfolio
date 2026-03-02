@@ -1,6 +1,6 @@
 const { registerBlockType } = wp.blocks;
 const { RichText, MediaUpload, InspectorControls } = wp.blockEditor;
-const { Button, TextControl, PanelBody } = wp.components;
+const { Button, TextControl, PanelBody, SelectControl } = wp.components;
 const { createElement } = wp.element;
 
 registerBlockType('custom-blocks/profile-about', {
@@ -114,7 +114,7 @@ registerBlockType('custom-blocks/profile-about', {
                         createElement(RichText.Content, { tagName: 'h2', value: title, className: 'h2' }),
                     ),
                     createElement('div', { className: 'col-md-6' },
-                        image && createElement('img', { src: image, alt: 'About Image' }),
+                        image && createElement('img', { src: image, alt: image.alt, className: 'profile-about-image' }),
                     ),
                     createElement('div', { className: 'col-md-6 d-flex align-items-center' },
                         createElement(RichText.Content, { tagName: 'p', value: content })
@@ -126,7 +126,7 @@ registerBlockType('custom-blocks/profile-about', {
                             createElement('div', { className: 'interest-item text-center card' },
                                 createElement('div', { className: 'card-body' },
                                     createElement('div', { className: 'card-icon-wrapper mb-4' },
-                                    interest.icon && createElement('img', { src: interest.icon, alt: interest.title || '', className: 'card-icon' }),
+                                    interest.icon && createElement('img', { src: interest.icon, alt: interest.alt || '', className: 'card-icon' }),
                                 ),
                                 createElement('h3', null, interest.title || ''),
                                 createElement('p', null, interest.content || '')

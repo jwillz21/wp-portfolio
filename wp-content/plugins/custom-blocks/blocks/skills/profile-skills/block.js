@@ -129,7 +129,7 @@ registerBlockType('custom-blocks/profile-skills', {
 
     save({ attributes }) {
         const { title, content, skills, technologies } = attributes;
-        return createElement('section', { className: 'profile-about bg-light' },
+        return createElement('section', { className: 'profile-skills bg-light' },
             createElement('div', { className: 'container' },
                 createElement('div', { className: 'row' },
                     createElement('div', { className: 'col-12 text-center' },
