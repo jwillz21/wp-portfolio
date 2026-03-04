@@ -86,3 +86,12 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+/* Remove Understrap's global "read more" addition from excerpts. */
+
+function understrap_child_disable_excerpt_read_more() {
+    if (function_exists('understrap_all_excerpts_get_more_link')) {
+        remove_filter('wp_trim_excerpt', 'understrap_all_excerpts_get_more_link');
+    }
+}
+add_action('after_setup_theme', 'understrap_child_disable_excerpt_read_more', 20);
