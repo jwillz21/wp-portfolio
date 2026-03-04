@@ -11,6 +11,7 @@
     --primary: #245cf5;
     --secondary: #fff;
     --white: #fff;
+    --primary-color-overlay: rgba(36, 92, 245, 0.8);
 
     /* Utility Colors */
     --card-border: #1E2939;
