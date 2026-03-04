@@ -35,9 +35,13 @@
     **********************/
     --font-family: 'Inter', sans-serif;
     --font-size-base: 18px;
+    --font-size-base-mobile: 16px;
     --font-size-h1: 72px;
+    --font-size-h1-mobile: 48px;
     --font-size-h2: 48px;
+    --font-size-h2-mobile: 32px;
     --font-size-h3: 24px;
+    --font-size-h3-mobile: 20px;
     --font-weight-normal: 400;
     --font-weight-bold: 700;
     --font-base-line-height: 28px;

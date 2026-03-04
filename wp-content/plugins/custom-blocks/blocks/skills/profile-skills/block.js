@@ -138,7 +138,7 @@ registerBlockType('custom-blocks/profile-skills', {
                     ),
                 ),
                 createElement('div', { className: 'row pt-5 align-items-stretch justify-content-center' }, 
-                    createElement('div', { className: 'col-md-5' },
+                    createElement('div', { className: 'col-md-5 mb-4 mb-md-0' },
                         createElement('div', { className: 'skills card card-dark h-100' },
                             createElement('div', { className: 'card-body d-flex flex-column' },
                                 createElement('h3', { className: 'h3' }, 'Frameworks & Languages'),

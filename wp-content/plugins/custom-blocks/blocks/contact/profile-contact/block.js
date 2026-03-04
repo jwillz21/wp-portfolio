@@ -169,7 +169,7 @@ registerBlockType('custom-blocks/profile-contact', {
                 ),
                 createElement('div', { className: 'row py-5 align-items-stretch justify-content-center' },
                     contacts.map((contact, index) =>
-                        createElement('div', { key: index, className: 'col-md-3' },
+                        createElement('div', { key: index, className: 'col-md-3 mb-4 mb-md-0' },
                             createElement('div', { className: 'contacts card card-dark h-100' },
                                 createElement('div', { className: 'card-body d-flex flex-column' },
                                     contact.method !== 'location'
