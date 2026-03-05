@@ -2,7 +2,7 @@ registerBlockType('custom-blocks/profile-contact', {
     title: 'Profile Contact Information',
     icon: 'cover-image',
     category: 'custom-blocks',
-
+    supports: { anchor: true },
     attributes: {
         title: { type: 'string', source: 'html', selector: 'h2' },
         content: { type: 'string', source: 'html', selector: 'p' },

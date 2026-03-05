@@ -7,7 +7,7 @@ registerBlockType('custom-blocks/profile-about', {
     title: 'Profile About',
     icon: 'cover-image',
     category: 'custom-blocks',
-
+    supports: { anchor: true },
     attributes: {
         title: { type: 'string', source: 'html', selector: 'h2' },
         image: { type:'string', default: '' },

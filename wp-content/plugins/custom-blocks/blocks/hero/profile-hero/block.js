@@ -2,7 +2,7 @@ registerBlockType('custom-blocks/profile-hero', {
     title: 'Profile Hero',
     icon: 'cover-image',
     category: 'custom-blocks',
-
+    supports: { anchor: true },
     attributes: {
         headshot: { type:'string', default: '' },
         title: { type: 'string', source: 'html', selector: 'h1' },
