@@ -40,8 +40,8 @@ if (!function_exists('custom_blocks_render_profile_projects')) {
                         setup_postdata($post);
 
                         $title         = get_the_title($post);
-                        $repo_url      = get_post_meta($post->ID, 'repo_url', true);
-                        $demo_url      = get_post_meta($post->ID, 'demo_url', true);
+                        $repo_url      = get_post_meta($post->ID, 'repository_link', true);
+                        $demo_url      = get_post_meta($post->ID, 'demo_link', true);
                         $thumbnail     = get_the_post_thumbnail($post, 'full', ['class' => 'img-fluid card-img-top']);
                         $modal_id      = 'projectModal-' . (int) $post->ID;
                         $raw_excerpt   = get_the_excerpt($post);

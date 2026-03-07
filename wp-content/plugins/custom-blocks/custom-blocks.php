@@ -133,6 +133,7 @@ add_filter('block_categories_all', function($categories) {
     );
 });
 
+//Create a custom post type for Projects
 function register_projects_cpt() {
     register_post_type('projects', array(
         'label'       => 'Projects',
@@ -143,3 +144,50 @@ function register_projects_cpt() {
     ));
 }
 add_action('init', 'register_projects_cpt');
+
+// Register meta box for demo or repository URL
+function add_project_meta_boxes() {
+    add_meta_box(
+        'demo_details',
+        'Project Demo Details',
+        'projects_links_meta_box',
+        'projects',
+        'side',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'add_project_meta_boxes');
+
+function projects_links_meta_box($post) {
+    wp_nonce_field('projects_links_nonce_action', 'projects_links_nonce');
+
+    $demo = get_post_meta($post->ID, 'demo_link', true);
+    $repo = get_post_meta($post->ID, 'repository_link', true);
+
+    echo '<p><label for="demo_link">Demo URL:</label></p>';
+    echo '<input type="url" id="demo_link" name="demo_link" value="' . esc_attr($demo) . '" style="width:100%;" />';
+
+    echo '<p><label for="repository_link">Repository URL:</label></p>';
+    echo '<input type="url" id="repository_link" name="repository_link" value="' . esc_attr($repo) . '" style="width:100%;" />';
+}
+
+function projects_save_links_meta_box($post_id) {
+    // Verify nonce
+    if (!isset($_POST['projects_links_nonce']) || !wp_verify_nonce($_POST['projects_links_nonce'], 'projects_links_nonce_action')) {
+        return;
+    }
+
+    // Avoid autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+    // Check permissions
+    if (!current_user_can('edit_post', $post_id)) return;
+    if (isset($_POST['demo_link'])) {
+        update_post_meta($post_id, 'demo_link', esc_url_raw($_POST['demo_link']));
+    }
+
+    if (isset($_POST['repository_link'])) {
+        update_post_meta($post_id, 'repository_link', esc_url_raw($_POST['repository_link']));
+    }
+}
+add_action('save_post', 'projects_save_links_meta_box');
