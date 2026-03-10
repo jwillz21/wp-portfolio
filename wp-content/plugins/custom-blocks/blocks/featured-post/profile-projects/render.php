@@ -55,25 +55,24 @@ if (!function_exists('custom_blocks_render_profile_projects')) {
                                     <?php echo $thumbnail ?: ''; ?>
 
                                     <div class="project-card-thumb__overlay">
-                                        <div class="project-card-thumb__actions">
-                                            <?php if (!empty($repo_url)) : ?>
-                                                <a href="<?php echo esc_url($repo_url); ?>"
-                                                   class="btn btn-outline-light btn-sm"
-                                                   target="_blank"
-                                                   rel="noopener noreferrer">
-                                                    Repo
-                                                </a>
-                                            <?php endif; ?>
+                                        <div class="project-card-thumb__actions d-flex flex-column">
+                                            <div class="icon-wrapper d-flex justify-content-center gap-4 mb-3">
+                                                <?php if (!empty($repo_url)) : ?>
+                                                    <a href="<?php echo esc_url($repo_url); ?>"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">
+                                                        <img src="/wp-content/uploads/2026/02/github-icon.png" alt="GitHub icon">
+                                                    </a>
+                                                <?php endif; ?>
 
-                                            <?php if (!empty($demo_url)) : ?>
-                                                <a href="<?php echo esc_url($demo_url); ?>"
-                                                   class="btn btn-outline-light btn-sm"
-                                                   target="_blank"
-                                                   rel="noopener noreferrer">
-                                                    Demo
-                                                </a>
-                                            <?php endif; ?>
-
+                                                <?php if (!empty($demo_url)) : ?>
+                                                    <a href="<?php echo esc_url($demo_url); ?>"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">
+                                                        <img src="/wp-content/uploads/2026/03/open-page-icon.png" alt="Demo icon">
+                                                    </a>
+                                                <?php endif; ?>
+                                            </div>
                                             <button type="button"
                                                     class="btn btn-outline-light btn-sm"
                                                     data-bs-toggle="modal"

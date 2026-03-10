@@ -77,7 +77,7 @@ section:not(.profile-hero) {
     padding: 0;
 }
 .modal-header::before {
-        background: linear-gradient(0deg, rgba(15, 25, 41, 1) 42%, rgba(0, 0, 0, 0.5) 100%);
+        background: linear-gradient(0deg, rgba(15, 25, 41, 1) 45%, rgba(0, 0, 0, 0.5) 100%);
         content: "";
         position: absolute;
         right: 0;
