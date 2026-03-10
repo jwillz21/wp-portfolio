@@ -175,7 +175,7 @@ registerBlockType('custom-blocks/profile-contact', {
                                     contact.method !== 'location'
                                         ? createElement('a', { 
                                             className: 'contact-link stretched-link d-flex flex-column text-center',
-                                            href: contact.url || '#',
+                                            href: contact.method === 'email' ? `mailto:${contact.url}` : contact.method=== 'phone' ? `tel:${contact.url}` : '',
                                             target: '_blank',
                                             rel: 'noopener noreferrer'
                                         },
