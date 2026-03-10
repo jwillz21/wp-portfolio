@@ -1,6 +1,8 @@
 services:
   db:
     image: mysql:8.0
+    ports:
+      - "3306:3306"
     container_name: ${DB_CONTAINER}
     restart: unless-stopped
     environment:
@@ -29,6 +31,18 @@ services:
         define('WP_SITEURL','${WP_URL}');
     volumes:
       - ./wp-content:/var/www/html/wp-content
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: portfolio_phpmyadmin
+    depends_on:
+      - db
+    restart: unless-stopped
+    ports:
+      - "8081:80"   # maps phpMyAdmin to http://localhost:8080
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
 
 volumes:
   db_data:

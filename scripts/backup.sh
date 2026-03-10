@@ -11,7 +11,7 @@ echo "==== WordPress Backup Script ===="
 
 read -p "Dump database? [y/N]: " db_answer
 if [[ "$db_answer" =~ ^[Yy]$ ]]; then
-    ./dump.sh
+    ./backup_dump.sh
 else
     echo "Skipping database dump."
 fi
