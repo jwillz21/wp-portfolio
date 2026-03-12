@@ -9,14 +9,21 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@master
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
-          host: 50.6.245.120
-          username: letmckmy
-          key: ${{ secrets.DEPLOY_KEY }}
-          script: |
-            cd ~/repositories/wp-portfolio
-            git fetch origin
-            git reset --hard origin/main
-            GIT_WORK_TREE=/home2/letmckmy/public_html git checkout -f main
+          fetch-depth: 0
+
+      - name: Test SSH connection
+        uses: webfactory/ssh-agent@v0.7.1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: SSH Test
+        run: ssh -o StrictHostKeyChecking=no letmckmy@50.6.245.120 "echo 'SSH connection successful!'"
+
+      - name: Deploy to Bluehost
+        run: |
+          rsync -avz --delete \
+            --exclude=".git" \
+            ./ letmckmy@50.6.245.120:/home2/letmckmy/public_html/
