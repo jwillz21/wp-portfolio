@@ -16,7 +16,7 @@ jobs:
           username: letmckmy
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
-            cd ~/repos/wp-portfolio.git
+            cd ~/repositories/wp-portfolio
             git fetch origin
             git reset --hard origin/main
             GIT_WORK_TREE=/home2/letmckmy/public_html git checkout -f main
