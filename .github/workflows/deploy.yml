@@ -14,10 +14,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Test SSH connection
-        uses: webfactory/ssh-agent@v0.7.1
-        with:
-          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 50.6.245.120 >> ~/.ssh/known_hosts
 
       - name: SSH Test
         run: ssh -o StrictHostKeyChecking=no letmckmy@50.6.245.120 "echo 'SSH connection successful!'"
