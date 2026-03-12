@@ -14,7 +14,7 @@ jobs:
         with:
           host: 50.6.245.120
           username: letmckmy
-          key: ${{ secrets.BLUEHOST_SSH_KEY }}
+          key: ${{ secrets.DEPLOY_KEY }}
           script: |
             cd ~/repos/wp-portfolio.git
             git fetch origin
