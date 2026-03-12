@@ -1,0 +1,22 @@
+name: Deploy to Bluehost
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: 50.6.245.120
+          username: letmckmy
+          key: ${{ secrets.BLUEHOST_SSH_KEY }}
+          script: |
+            cd ~/repos/wp-portfolio.git
+            git fetch origin
+            git reset --hard origin/main
+            GIT_WORK_TREE=/home2/letmckmy/public_html git checkout -f main
