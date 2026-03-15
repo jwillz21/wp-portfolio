@@ -3,19 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe('Homepage tests', () => {
 
   test('profile sections appear', async ({ page }) => {
-
+    // test scrolls into view and checks each section exists
     await page.goto('/');
-
-    const hero = page.locator('#hero');
-    const about = page.locator('#about');
-    const skills = page.locator('#skills');
-    const projects = page.locator('#projects');
-    const contact = page.locator('#contact');
-
-    await expect(hero).toBeVisible();
-    await expect(about).toBeVisible();
-    await expect(skills).toBeVisible();
-    await expect(projects).toBeVisible();
-    await expect(contact).toBeVisible();
+    const sections = ['#hero', '#about', '#skills', '#projects', '#contact'];
+    for (const selector of sections) {
+      const section = page.locator(selector);
+      await section.scrollIntoViewIfNeeded();
+      await expect(section).toBeVisible({ timeout: 5000 });
+      await expect(section).toBeInViewport({ timeout: 5000 });
+    }
   });
 });
