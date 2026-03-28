@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<phpunit
+    bootstrap="tests/bootstrap.php"
+    colors="true"
+>
+    <testsuites>
+        <testsuite name="WordPress unit tests">
+            <directory>tests/unit</directory>
+        </testsuite>
+        <testsuite name="WordPress integration tests">
+            <directory>tests/integration</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="WP_TESTS_DOMAIN" value="portfolio.tests"/>
+        <env name="WP_TESTS_EMAIL" value="portfolio@builtbyjermaye.com"/>
+        <env name="WP_TESTS_TITLE" value="Portfolio Test Suite"/>
+        <env name="WP_PHP_BINARY" value="/opt/homebrew/bin/php"/>
+    </php>
+</phpunit>

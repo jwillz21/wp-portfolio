@@ -31,6 +31,23 @@ services:
         define('WP_SITEURL','${WP_URL}');
     volumes:
       - ./wp-content:/var/www/html/wp-content
+
+  wp-tests:
+    image: wordpress:php8.2-apache
+    depends_on:
+      - db
+    working_dir: /workspace
+    environment:
+      WP_CORE_DIR: /usr/src/wordpress
+      WP_TEST_DB_HOST: db:3306
+      WP_TEST_DB_NAME: ${DB_NAME}
+      WP_TEST_DB_USER: ${DB_USER}
+      WP_TEST_DB_PASSWORD: ${DB_PASSWORD}
+      WP_PHP_BINARY: php
+    volumes:
+      - ./:/workspace
+      - ./wp-content:/var/www/html/wp-content
+    command: ["sh", "-lc", "php ./vendor/bin/phpunit"]
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
